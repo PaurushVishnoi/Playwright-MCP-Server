@@ -17,6 +17,50 @@ This project showcases how to integrate **Claude Desktop**, **Playwright MCP**, 
 to create a smart, AI-assisted test automation environment where test cases and step definitions can be  
 generated dynamically — without writing code manually.
 
+###  What is MCP and Why Use It?
+
+The **Model Context Protocol (MCP)** is an open standard that allows you to run and connect **local or custom AI tools** (known as *MCP servers*) with your LLM client — such as **ChatGPT**, **Claude**, or other AI models.  
+
+Instead of relying entirely on cloud APIs, MCP lets your AI communicate directly with your **own code, data, and local environment** — securely and privately.
+
+> 🧠 **Think of MCP as a bridge** between your AI assistant and your local tools, scripts, or data — allowing it to *see*, *run*, and *use* resources on your computer safely.
+
+---
+
+###  How MCP Differs from Normal LLM Usage
+
+
+| **Feature** | **Normal ChatGPT / Cloud LLM** | **MCP Server Setup** |
+|--------------|--------------------------------|-----------------------|
+| **Environment** | Fully cloud-based; runs on OpenAI servers | Runs **locally** on your system |
+| **Data Access** | Limited to what you manually paste or upload | Can securely access **local files, APIs, or tools** |
+| **Customization** | Dependent on built-in model capabilities | Fully **customizable** — define your own logic and tools |
+| **Latency & Privacy** | Data sent to remote servers | Data stays **on your machine**, improving **privacy and speed** |
+| **Integration** | Suited for general-purpose chat | Perfect for **automation**, **testing**, and **system integration** |
+
+---
+
+###  Why MCP Servers Are Useful
+
+The **MCP Server** architecture enables powerful, local, and secure extensions for your LLM:
+
+-  **Local Control** – You decide exactly what the model can access or execute — no cloud dependency.  
+-  **Custom Tools** – Expose your own APIs, databases, or scripts as callable “tools.”  
+-  **Automation Ready** – Let your LLM *do things*, not just chat — like running Playwright tests or managing files.  
+-  **Developer Friendly** – Perfect for integrating AI into **local dev environments** or **CI/CD pipelines**.  
+
+---
+
+### 💻 Runs Locally
+
+When you run an **MCP Server** (such as the **Playwright MCP Server**), it operates **directly on your system**.
+
+That means:
+
+-  It can interact with your **local environment, files, and installed tools**.  
+-  No sensitive data leaves your computer — it all stays local.  
+-  You have **complete control** over what the AI can and cannot do.
+
 ---
 
 ## 📋 Table of Contents
@@ -71,6 +115,8 @@ exmox_PASSWORD=secret_sauce
    - Go to **Settings → Developer → Edit config**
    - This opens the file: `claude_desktop_config.json` (it may be empty)
 
+
+
 2. **Paste the following configuration:**
 
    ```json
@@ -88,6 +134,8 @@ exmox_PASSWORD=secret_sauce
 
 4. **Once restarted, you should see Playwright tools appear automatically in Claude Desktop**
 
+![Playwright tools showing in Claude Desktop](./screenshots/playwright-mcp-claude.PNG)
+![Playwright tools showing in Claude Desktop](./screenshots/playwright-tool-claude.PNG)
 
 
 ## 🧪 Testing the MCP Server
@@ -107,6 +155,8 @@ To confirm that your Playwright MCP setup is working correctly, follow these ste
 
    🎉 **Congratulations!**  
    Your **MCP server** is active and fully functional.
+
+![Playwright MCP browser in Claude](./screenshots/Claude-test-browser.PNG)   
 
 ---
 
@@ -142,9 +192,13 @@ This will install all the required dependencies listed in your package.json.
 
 ### 1️⃣ Open Copilot Agent
 1. Open **Copilot Chat** in **VS Code**.  
-2. Switch to **Agent Mode**.  
+2. Switch to **Agent Mode**. 
+
+![Agent - Copilot chat](./screenshots/Agent-CoPilot.PNG)
+
 3. You’ll notice that **“MCP Server: Playwright”** is already configured.
 
+![Agent - Copilot configuration tool](./screenshots/configure-tool-section.PNG)
 ---
 
 ### 💡 Why It Works Automatically
@@ -168,9 +222,11 @@ and imports them automatically — so you don’t need to manually reconfigure a
 ### 🧪 2. Generate Test Scenarios
 
 > **Prompt:**  
-> “As a user, I want to test the feature that when I add a product to the cart it should be visible in the cart. Add test scenarios in the e2e.feature file.”
+> “As a user, I want to test the feature that when I add a product to the cart it should be visible in the cart. 
 
-✅ Copilot generates test scenarios inside your `e2e.feature` file automatically.
+> Add test scenarios in the e2e.feature file. put the tag @cart to the scenarios”
+
+✅ Copilot generates test scenarios inside your `e2e.feature` file automatically with tags @cart.
 
 ---
 
