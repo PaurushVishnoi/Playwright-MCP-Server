@@ -113,6 +113,8 @@ exmox_PASSWORD=secret_sauce
 
 1. **Open Claude Desktop Settings**
    - Go to **Settings → Developer → Edit config**
+   
+   ![Dev tools in Claude Desktop](./screenshots/developer-claude.PNG)
    - This opens the file: `claude_desktop_config.json` (it may be empty)
 
 
@@ -123,7 +125,7 @@ exmox_PASSWORD=secret_sauce
    {
      "mcpServers": {
        "playwright": {
-         "command": "C:\\Program Files\\nodejs\\npx.cmd",
+         "command": "npx",
          "args": ["@playwright/mcp@latest", "--stdio"]
        }
      }
