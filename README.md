@@ -126,7 +126,7 @@ exmox_PASSWORD=secret_sauce
      "mcpServers": {
        "playwright": {
          "command": "npx",
-         "args": ["@playwright/mcp@latest", "--stdio"]
+         "args": ["@playwright/mcp@latest"]
        }
      }
    }
