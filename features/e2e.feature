@@ -1,6 +1,6 @@
-Feature: Leapsome e2e tests
+Feature: MCP e2e tests
 
-    Validate End to End scenarios from Leapsome
+    Validate End to End scenarios from MCP
 
     @Login @JIRA-2701
     Scenario: Logging into Sauce Labs with incorrect credentials 
